@@ -9,46 +9,53 @@ function getComputerChoice(){
             return 'SCISSORS'        
     }
 }
-let playerSelection = prompt("please Select your Choice", "ROCK");
+let playerSelection = "";
 let computerSelection = getComputerChoice();
 let computerRound = 0;
 let playerRound = 0;
 let outPutMessage = "";
 
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection === computerSelection){
-        //outPutMessage = "tie";
-    }
-    else if(playerSelection === "ROCK" && computerSelection === "SCISSORS"){
+    
+    
+    if(playerSelection === "ROCK" && computerSelection === "SCISSORS"){
         playerRound++;
-        //outPutMessage = "Player wins, Rock is stronger than Scissors";
+        return "Player wins, Rock is stronger than Scissors";
+        
     }
     else if(playerSelection === "PAPER" && computerSelection === "ROCK"){
         playerRound++;
-        //outPutMessage = "YOU win !!, Paper is stronger than Rock";
+        return "YOU win !!, Paper is stronger than Rock";
+        
     }
     else if(playerSelection === "SCISSORS" && computerSelection === "PAPER"){
         playerRound++;
-        //outPutMessage = "YOU Win !!, SCISSORS is Stronger than PAPER";
+        return "YOU Win !!, SCISSORS is Stronger than PAPER";
+        
     }
    //computer check
 
    else if(computerSelection === "ROCK" && playerSelection === "SCISSORS"){
     computerRound++;
-    //outPutMessage = "Computer wins, Rock is stronger than Scissors";
+    return "Computer wins, Rock is stronger than Scissors";
+    
 }
 else if(computerSelection === "PAPER" && playerSelection === "ROCK"){
     computerRound++;
-    //outPutMessage = "computer wins, Paper is stronger than Rock";
+    return "computer wins, Paper is stronger than Rock";
+    
 }
 else if(computerSelection === "SCISSORS" && playerSelection === "PAPER"){
     computerRound++;
-    outPutMessage = "computer wins, SCISSORS is Stronger than PAPER";
+    return "computer wins, SCISSORS is Stronger than PAPER";
+    
+}
+else{
+    return "That was a draw."
 }
 
-    
-   // return outPutMessage;
-  }
+    }
 
-  
+    
+
  
