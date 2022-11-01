@@ -10,6 +10,14 @@ function getComputerChoice(){
     }
 }
 
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+const output = document.querySelector('.output');
+
+
+
+
 let computerScore = 0;
 let playerScore = 0;
 
@@ -18,46 +26,80 @@ function playRound(playerSelection, computerSelection) {
     
     
     if(playerSelection === "ROCK" && computerSelection === "SCISSORS"){
+       const p = document.createElement('p');
+       p.innerText =  ` You wins, Rock is stronger than Scissors. Score: ${playerScore} to ${computerScore} `;
+       output.appendChild(p);
         playerScore++;
-        return ` You wins, Rock is stronger than Scissors. Score: ${playerScore} to ${computerScore} `;
+        
         
     }
     else if(playerSelection === "PAPER" && computerSelection === "ROCK"){
         playerScore++;
-        return `YOU win !!, Paper is stronger than Rock..Score: ${playerScore} to ${computerScore}`;
+        const p = document.createElement('p');
+        p.innerText =  `YOU win !!, Paper is stronger than Rock..Score: ${playerScore} to ${computerScore}`;
+        output.appendChild(p);
         
     }
     else if(playerSelection === "SCISSORS" && computerSelection === "PAPER"){
+        const p = document.createElement('p');
+        p.innerText = `YOU Win !!, SCISSORS is Stronger than PAPER .Score: ${playerScore} to ${computerScore}`;
+        output.appendChild(p);
         playerScore++;
-        return `YOU Win !!, SCISSORS is Stronger than PAPER .Score: ${playerScore} to ${computerScore}`;
-        
     }
    //computer check
 
    else if(computerSelection === "ROCK" && playerSelection === "SCISSORS"){
     computerScore++;
-    return Computer `wins, Rock is stronger than Scissors.Score: ${playerScore} to ${computerScore}`;
+    const p = document.createElement('p');
+    p.innerText = `Computer wins, Rock is stronger than Scissors.Score: ${playerScore} to ${computerScore}`;
+    output.appendChild(p);
     
 }
 else if(computerSelection === "PAPER" && playerSelection === "ROCK"){
     computerScore++;
-    return `computer wins, Paper is stronger than Rock..Score: ${playerScore} to ${computerScore}`;
+    const p = document.createElement('p');
+    p.innerText = `computer wins, Paper is stronger than Rock..Score: ${playerScore} to ${computerScore}`;
+    output.appendChild(p);
     
 }
 else if(computerSelection === "SCISSORS" && playerSelection === "PAPER"){
     computerScore++;
-    return computer `wins, SCISSORS is Stronger than PAPER..Score: ${playerScore} to ${computerScore}`;
+    const p = document.createElement('p');
+    p.innerText = `computer wins, SCISSORS is Stronger than PAPER..Score: ${playerScore} to ${computerScore}`;
+    output.appendChild(p);
     
 }
 else { 
-    return `That was a draw. Score: ${playerScore} to ${computerScore}`
+    const p = document.createElement('p');
+    p.innerText = `That was a draw. Score: ${playerScore} to ${computerScore}`;
+    output.append(p);
+
 }
 
     }
 
-    function game(){
+
+    rockButton.addEventListener('click', () => {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'ROCK';
+        playRound(playerSelection, computerSelection);
+    })
+
+    paperButton.addEventListener('click', () => {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'PAPER';
+        playRound(playerSelection, computerSelection);
+    })
+
+    scissorsButton.addEventListener('click', () => {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'SCISSORS';
+        playRound(playerSelection, computerSelection);
+    })
+
+    /*function game(){
         for(let i = 0; i < 5; i++){
-            playerSelection = prompt("Make a choice: Scissors, Paper, Rock");
+            playerSelection = document.querySelector(`button[${class}]`) //prompt("Make a choice: Scissors, Paper, Rock");
             playerSelection = playerSelection.toUpperCase();
             const computerSelection = getComputerChoice();
             console.log(playRound(playerSelection, computerSelection));
@@ -70,6 +112,6 @@ else {
        }   else console.log("You tied");
     }
 
-    game();
+    game();*/
 
  
