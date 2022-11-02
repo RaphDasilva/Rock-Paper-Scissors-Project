@@ -14,6 +14,11 @@ const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const output = document.querySelector('.output');
+const container = document.querySelector('.container');
+const outcome = document.createElement('div');
+output.append(outcome);
+const playerScor = document.querySelector('.player-score');
+const computerscor = document.querySelector('.computer-score');
 
 
 
@@ -78,23 +83,54 @@ else {
 
     }
 
+function displayScore(playerScore,computerScore){
+    playerScor.innerText = `Player Score: ${playerScore}`;
+    computerscor.innerText = `Computer Score: ${computerScore}`;
+}
+
+function checkWinner(playerScore,computerScore){
+    if(playerScore === 5){
+        const h3 = document.createElement('h3')
+        h3.classList.add('player-win');
+        h3.innerText = `You win, ${playerScore} to ${computerScore}`;
+        outcome.appendChild(h3);
+
+    }
+    else if(computerScore === 5){
+        const h3 = document.createElement('h3')
+        h3.classList.add('computer-win');
+        h3.innerText = `computer win,try again, ${playerScore} to ${computerScore}`;
+        outcome.appendChild(h3);
+    }
+}
+
+
+
+
+
 
     rockButton.addEventListener('click', () => {
         const computerSelection = getComputerChoice();
         const playerSelection = 'ROCK';
         playRound(playerSelection, computerSelection);
+        displayScore(playerScore,computerScore)
+        checkWinner(playerScore,computerScore)
     })
 
     paperButton.addEventListener('click', () => {
         const computerSelection = getComputerChoice();
         const playerSelection = 'PAPER';
         playRound(playerSelection, computerSelection);
+        displayScore(playerScore,computerScore)
+        checkWinner(playerScore,computerScore)
     })
 
     scissorsButton.addEventListener('click', () => {
         const computerSelection = getComputerChoice();
         const playerSelection = 'SCISSORS';
         playRound(playerSelection, computerSelection);
+        displayScore(playerScore,computerScore)
+        checkWinner(playerScore,computerScore)
     })
 
     /*function game(){
