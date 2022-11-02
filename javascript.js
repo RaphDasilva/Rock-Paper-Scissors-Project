@@ -16,6 +16,7 @@ const scissorsButton = document.querySelector('.scissors');
 const output = document.querySelector('.output');
 const container = document.querySelector('.container');
 const outcome = document.createElement('div');
+outcome.classList.add('outcome')
 output.append(outcome);
 const playerScor = document.querySelector('.player-score');
 const computerscor = document.querySelector('.computer-score');
@@ -83,9 +84,11 @@ else {
 
     }
 
+
+
 function displayScore(playerScore,computerScore){
-    playerScor.innerText = `Player Score: ${playerScore}`;
-    computerscor.innerText = `Computer Score: ${computerScore}`;
+    playerScor.innerText = `${playerScore}`;
+    computerscor.innerText = `${computerScore}`;
 }
 
 function checkWinner(playerScore,computerScore){
@@ -115,22 +118,25 @@ function checkWinner(playerScore,computerScore){
         playRound(playerSelection, computerSelection);
         displayScore(playerScore,computerScore)
         checkWinner(playerScore,computerScore)
+        
     })
 
     paperButton.addEventListener('click', () => {
         const computerSelection = getComputerChoice();
         const playerSelection = 'PAPER';
         playRound(playerSelection, computerSelection);
-        displayScore(playerScore,computerScore)
-        checkWinner(playerScore,computerScore)
+        displayScore(playerScore,computerScore);
+        checkWinner(playerScore,computerScore);
+       
     })
 
     scissorsButton.addEventListener('click', () => {
         const computerSelection = getComputerChoice();
         const playerSelection = 'SCISSORS';
         playRound(playerSelection, computerSelection);
-        displayScore(playerScore,computerScore)
-        checkWinner(playerScore,computerScore)
+        displayScore(playerScore,computerScore);
+        checkWinner(playerScore,computerScore);
+        
     })
 
     /*function game(){

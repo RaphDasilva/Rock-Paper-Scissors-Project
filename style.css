@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("img/background.jpg");
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+ .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2vw;
+    font-weight: bold;
+    color: tomato;
+    font-family: "Lucida Console", "Courier New", monospace;
+ }
+ 
+ .score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 100px;
+    
+ }
+
+ .score-div{
+    width: 300px;
+    height: 300px;
+    border-style: solid;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+ }
+
+ img[alt = "person"]{
+    width: 100px;
+ }
+
+ img[alt = "computer"]{
+    width: 100px;
+ }
+
+ span{
+    font-size: 2vw;
+    font-weight: bold;
+    color: tomato;
+ }
+ .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 10px;
+    gap:30px;
+ }
+
+ .output{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: tomato;
+    font-size: 20px;
+    margin-top: 50px;
+   
+ }
+
+ .outcome{
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(87, 153, 87);
+ }
