@@ -14,6 +14,7 @@ body{
     font-weight: bold;
     color: tomato;
     font-family: "Lucida Console", "Courier New", monospace;
+    width: 100%;
  }
  
  .score{
@@ -22,6 +23,7 @@ body{
     align-items: center;
     margin-top: 50px;
     gap: 100px;
+    flex-wrap: wrap;
     
  }
 
@@ -51,6 +53,7 @@ body{
  }
  .container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
