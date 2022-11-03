@@ -21,6 +21,9 @@ outcome.classList.add('outcome')
 output.append(outcome);
 const playerScor = document.querySelector('.player-score');
 const computerscor = document.querySelector('.computer-score');
+const clickSound = document.querySelector('.click-sound');
+const winSound = document.querySelector('.win-sound');
+const lossSound = document.querySelector('.computer-win-sound')
 
 
 
@@ -98,6 +101,7 @@ function checkWinner(playerScore,computerScore){
         h3.classList.add('player-win');
         h3.innerText = `You win, ${playerScore} to ${computerScore} (Refresh page to play again)`;
         outcome.appendChild(h3);
+        winSound.play();
 
     }
     else if(computerScore === 5){
@@ -105,6 +109,7 @@ function checkWinner(playerScore,computerScore){
         h3.classList.add('computer-win');
         h3.innerText = `computer win,try again, ${playerScore} to ${computerScore}(Refresh page to play again)`;
         outcome.appendChild(h3);
+        lossSound.play();
     }
 }
 
@@ -126,6 +131,7 @@ function checkWinner(playerScore,computerScore){
         displayScore(playerScore,computerScore);
         checkWinner(playerScore,computerScore);
         stopPlay(playerScore,computerScore)
+        clickSound.play();
         })
     })
 
